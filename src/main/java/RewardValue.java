@@ -25,13 +25,19 @@ public class RewardValue {
         return milesValue;
     }
 
+    // Static method to get the conversion rate
+    public static double getMilesConversionRate() {
+        return MILES_CONVERSION_RATE;
+    }
+
     // Method to calculate miles from cash value
     private int calculateMilesFromCash(double cash) {
-        return (int) (cash / MILES_CONVERSION_RATE);
+        double miles = cash / MILES_CONVERSION_RATE; // Calculate miles
+        return (int) Math.round(miles); // Round to nearest int
     }
 
     // Method to calculate cash from miles value
     private double calculateCashFromMiles(int miles) {
-        return miles * MILES_CONVERSION_RATE;
+        return miles * MILES_CONVERSION_RATE; // Calculate cash value from miles
     }
 }
